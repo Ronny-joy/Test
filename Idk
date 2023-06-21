@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Změna barev a textu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            transition: color 0.3s;
+        }
+    </style>
+    <script>
+        function changeColors() {
+            var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        function changeText() {
+            var newText = "Zabi se Kiki!!!";
+            document.getElementById('text').textContent = newText;
+        }
+
+        setInterval(changeColors, 3000); // Měnit barvy každých 3 sekundy
+        setTimeout(changeText, 2000); // Změnit text po načtení stránky
+    </script>
+</head>
+<body>
+    <h1 id="text">Text se změní</h1>
+</body>
+</html>
